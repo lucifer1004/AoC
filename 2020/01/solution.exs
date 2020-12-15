@@ -31,7 +31,9 @@ defmodule AoC do
       []
     else
       lst = [[]]
-      choose_three(nums, lst) |> Enum.filter(fn x -> length(x) == 3 end)
+
+      choose_three(nums, lst)
+      |> Enum.filter(fn x -> length(x) == 3 end)
     end
   end
 
