@@ -15,9 +15,7 @@ with open('input.txt') as f:
             continue
         elif state == 0:
             m = re.match(r'([a-z\s]+): (\d+)-(\d+) or (\d+)-(\d+)', row)
-            if m:
-                rules.append((m.group(1), int(m.group(2)),
-                              int(m.group(3)), int(m.group(4)), int(m.group(5))))
+            rules.append((m.group(1), *map(int, m.groups()[1:])))
         elif state == 1:
             my_ticket = list(map(int, row.split(',')))
         elif state == 2:
