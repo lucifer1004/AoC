@@ -2,25 +2,23 @@ from collections import defaultdict
 
 with open('input.txt') as f:
     for row in f:
-        nums = list(map(int, row.split(',')))
+        commands = list(map(int, row.split(',')))
 
         def solve(noun, verb):
+            nums = list(commands)
             nums[1] = noun
             nums[2] = verb
-            ans = defaultdict()
-            for i, num in enumerate(nums):
-                ans[i] = num
             i = 0
             while i < len(nums):
                 if nums[i] == 1:
-                    ans[nums[i + 3]] = ans[nums[i + 1]] + ans[nums[i + 2]]
+                    nums[nums[i + 3]] = nums[nums[i + 1]] + nums[nums[i + 2]]
                     i += 4
                 elif nums[i] == 2:
-                    ans[nums[i + 3]] = ans[nums[i + 1]] * ans[nums[i + 2]]
+                    nums[nums[i + 3]] = nums[nums[i + 1]] * nums[nums[i + 2]]
                     i += 4
                 elif nums[i] == 99:
                     break
-            return ans[0]
+            return nums[0]
 
         # Part I
         print(solve(12, 2))
