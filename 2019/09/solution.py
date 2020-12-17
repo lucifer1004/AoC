@@ -11,7 +11,7 @@ with open('input.txt') as f:
             output = []
             i = 0
             rb = 0
-            while i < len(nums):
+            while i < len(commands):
                 opcode = str(nums[i]).rjust(5, '0')
 
                 def get_val(offset):

@@ -14,10 +14,10 @@ with open('input.txt') as f:
 
                 op = nums[i] % 100
                 if op == 1:
-                    nums[nums[i+3]] = get_val(1) + get_val(2)
+                    nums[nums[i + 3]] = get_val(1) + get_val(2)
                     i += 4
                 elif op == 2:
-                    nums[nums[i+3]] = get_val(1) * get_val(2)
+                    nums[nums[i + 3]] = get_val(1) * get_val(2)
                     i += 4
                 elif op == 3:
                     nums[nums[i + 1]] = input
@@ -36,10 +36,10 @@ with open('input.txt') as f:
                     else:
                         i += 3
                 elif op == 7:
-                    nums[nums[i+3]] = 1 if get_val(1) < get_val(2) else 0
+                    nums[nums[i + 3]] = 1 if get_val(1) < get_val(2) else 0
                     i += 4
                 elif op == 8:
-                    nums[nums[i+3]] = 1 if get_val(1) == get_val(2) else 0
+                    nums[nums[i + 3]] = 1 if get_val(1) == get_val(2) else 0
                     i += 4
                 elif op == 99:
                     break
