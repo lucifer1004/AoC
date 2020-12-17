@@ -23,32 +23,29 @@ with open('input.txt') as f:
     def solve(dimension, cycle):
         assert(dimension >= 2)
         extra_dimension = dimension - 2
-        maze = defaultdict(lambda: False)
+        maze = set()
         for i in range(len(rows)):
             for j in range(len(rows[0])):
-                maze[(i, j, *[0] * extra_dimension)] = rows[i][j] == '#'
+                if rows[i][j] == '#':
+                    maze.add((i, j, *[0] * extra_dimension))
 
         for _ in range(cycle):
-            nxt = defaultdict(lambda: False)
+            nxt = set()
             cnt = defaultdict(lambda: 0)
 
             for pos in maze:
-                if maze[pos]:
-                    for neighbor in get_neighbors(pos):
-                        cnt[neighbor] += 1
+                for neighbor in get_neighbors(pos):
+                    cnt[neighbor] += 1
 
             for pos in cnt:
-                if maze[pos]:
-                    nxt[pos] = 2 <= cnt[pos] <= 3
-                else:
-                    nxt[pos] = cnt[pos] == 3
+                if pos in maze:
+                    if 2 <= cnt[pos] <= 3:
+                        nxt.add(pos)
+                elif cnt[pos] == 3:
+                    nxt.add(pos)
             maze = nxt
 
-        ans = 0
-        for pos in maze:
-            if maze[pos]:
-                ans += 1
-        print(ans)
+        print(len(maze))
 
     # Part I
     solve(3, cycle=6)
