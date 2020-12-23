@@ -56,4 +56,4 @@ c2, d2 = build(cups + [i + n + 1 for i in range(n2 - n)])
 for _ in range(t2):
     c2 = simulate(c2, d2, n2)
 o2 = d2[1]
-print('Part II: ', o2.next.val * o2.next.next.val)
+print('Part II:', o2.next.val * o2.next.next.val)
