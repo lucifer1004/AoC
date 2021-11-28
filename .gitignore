@@ -1,2 +1,6 @@
 .elixir_ls
 .vscode
+
+.env
+.ipynb_checkpoints
+__pycache__
