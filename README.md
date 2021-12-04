@@ -12,4 +12,8 @@ The folder structure is:
   - Day01.ipynb, Day02.ipynb, ... (Python solutions)
   - kotlin (`#aoc-2021-in-kotlin`)
     - Day01.ipynb, Day02.ipynb, ... (Kotlin solutions)
+  - elixir
+    - Day01.ipynb, Day02.ipynb, ... (Elixir solutions)
+  - ruby
+    - Day01.ipynb, Day02.ipynb, ... (Ruby solutions)
   - other languages to be added
