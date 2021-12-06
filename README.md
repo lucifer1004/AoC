@@ -8,6 +8,9 @@ I will mostly use Python when competing, but will reimplement in other languages
 
 The folder structure is:
 
+- utils
+  - aoc.py (useful functions and constants)
+- .env (`AOC_SESSION=<your adventofcode session obtained from cookies>`)
 - 2021
   - Day01.ipynb, Day02.ipynb, ... (Python solutions)
   - kotlin (`#aoc-2021-in-kotlin`)
@@ -16,5 +19,4 @@ The folder structure is:
     - Day01.ipynb, Day02.ipynb, ... (Elixir solutions)
   - ruby
     - Day01.ipynb, Day02.ipynb, ... (Ruby solutions)
-  - .env (`AOC_SESSION=<your adventofcode session obtained from cookies>`)
   - other languages to be added
