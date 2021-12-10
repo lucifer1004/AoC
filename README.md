@@ -19,4 +19,6 @@ The folder structure is:
     - Day01.ipynb, Day02.ipynb, ... (Elixir solutions)
   - ruby
     - Day01.ipynb, Day02.ipynb, ... (Ruby solutions)
+  - julia
+    - Day01.jl, Day02.jl, ... (Julia solutions, using Pluto.jl)
   - other languages to be added
