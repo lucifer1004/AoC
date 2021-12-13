@@ -12,6 +12,7 @@ def get_input(year, day, session=AOC_SESSION):
         f'https://adventofcode.com/{year}/day/{day}/input', cookies=cookies)
     return r.text
 
+
 def submit_answer(answer, year, day, level=1, session=AOC_SESSION):
     cookies = dict(session=session)
     r = requests.post(
@@ -40,6 +41,14 @@ def mat_exp(A, y):
         A = mat_mul(A, A)
         y >>= 1
     return ans
+
+
+def exgcd(a, b):
+    if b == 0:
+        return a, 1, 0
+    else:
+        g, m, n = exgcd(b, a % b)
+        return g, n, m - a // b * n
 
 
 d4n = {'E': (1, 0), 'S': (0, -1), 'W': (-1, 0), 'N': (0, 1)}
