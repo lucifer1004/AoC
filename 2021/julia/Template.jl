@@ -11,7 +11,7 @@ using HTTP, DotEnv, DataStructures
 year = 2021
 
 # ╔═╡ ec70de34-7f93-4090-9132-04173fae3a3c
-day = 16
+day =
 
 # ╔═╡ 790ebff9-98f3-49a3-9232-08ca3113bed6
 function get_input()
