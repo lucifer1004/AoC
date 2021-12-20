@@ -14,20 +14,6 @@ macro bind(def, element)
     end
 end
 
-# ╔═╡ 5a50764e-c4b8-47fd-bf5d-a307388d85f7
-md"## Settings"
-
-# ╔═╡ 96b2abc4-a7d5-4122-9c29-7136fd6ffae8
-md"Year: $(@bind year NumberField(2015:2100, default=2021))"
-
-# ╔═╡ ec70de34-7f93-4090-9132-04173fae3a3c
-md"Day: $(@bind day NumberField(0:25, default=0))"
-
-# ╔═╡ 621d1231-c6f7-4615-a81b-4a5dcb9e3405
-md"""
-# $(day == 0 ? "Pluto.jl Template for Advent of Code" : "Advent of Code $year: Day $day")
-"""
-
 # ╔═╡ cdce8f64-5996-11ec-00ef-77e69eb69432
 begin
 	using HTTP # To make HTTP requests
@@ -42,7 +28,7 @@ begin
 	using Mods # To use modular arithmetic
 	using PlutoUI
 
-	function get_input()
+	function get_input(year, day)
 		if day == 0
 			return "Set variable \$day to make this work."
 		end
@@ -54,7 +40,7 @@ begin
 		return strip(String(r.body))
 	end
 
-	function submit_answer(answer, level = 1)
+	function submit_answer(year, day, answer, level = 1)
 		if day == 0
 			return "Set variable \$day to make this work."
 		end
@@ -75,8 +61,22 @@ begin
 	md"📘 Prelude loaded. (Expand to edit dependencies.)"
 end
 
+# ╔═╡ 5a50764e-c4b8-47fd-bf5d-a307388d85f7
+md"## Settings"
+
+# ╔═╡ 96b2abc4-a7d5-4122-9c29-7136fd6ffae8
+md"Year: $(@bind year NumberField(2015:2100, default=2021))"
+
+# ╔═╡ ec70de34-7f93-4090-9132-04173fae3a3c
+md"Day: $(@bind day NumberField(0:25, default=0))"
+
+# ╔═╡ 621d1231-c6f7-4615-a81b-4a5dcb9e3405
+md"""
+# $(day == 0 ? "Pluto.jl Template for Advent of Code" : "Advent of Code $year: Day $day")
+"""
+
 # ╔═╡ 24b3ef81-0019-49c4-ad49-ac215826a9ac
-input = get_input()
+input = get_input(year, day)
 
 # ╔═╡ 77427f2a-c602-4dc4-a48e-2b9088fb90df
 md"""
@@ -126,7 +126,7 @@ end
 md"❔ Part One Correct? $(@bind part_one_correct CheckBox())"
 
 # ╔═╡ 2700832c-7fcc-4451-a090-0dc499f5d889
-part_one_correct ? submit_answer(part_one_ans) : md"❌ Part One not finished yet."
+part_one_correct ? submit_answer(year, day, part_one_ans) : md"❌ Part One not finished yet."
 
 # ╔═╡ 1c325125-55e8-4174-953d-a35b85b45ba0
 function part_two(input)
@@ -145,7 +145,7 @@ end
 md"❔ Part Two Correct? $(@bind part_two_correct CheckBox())"
 
 # ╔═╡ 0cdc8221-f4f9-4765-ad9a-5fe9e4a96e41
-part_two_correct ? submit_answer(part_two_ans, 2) : md"❌ Part Two not finished yet."
+part_two_correct ? submit_answer(year, day, part_two_ans, 2) : md"❌ Part Two not finished yet."
 
 # ╔═╡ 65f339b6-61b5-49af-9831-4041b9e136c8
 md"""
