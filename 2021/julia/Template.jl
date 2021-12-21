@@ -54,8 +54,7 @@ begin
 			],
 			HTTP.escapeuri(Dict("level" => level, "answer" => answer)),
 			cookies = Dict("session" => session))
-		body = strip(String(r.body))
-		return match(r"""<main>\n(.*)\n</main>""", body)[1]
+		return strip(String(r.body))
 	end
 
 	md"📘 Prelude loaded. (Expand to edit dependencies.)"
