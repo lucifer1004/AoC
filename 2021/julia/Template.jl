@@ -64,10 +64,10 @@ end
 md"## Settings"
 
 # ╔═╡ 96b2abc4-a7d5-4122-9c29-7136fd6ffae8
-md"Year: $(@bind year NumberField(2015:2100, default=2021))"
+year = 2021
 
 # ╔═╡ ec70de34-7f93-4090-9132-04173fae3a3c
-md"Day: $(@bind day NumberField(0:25, default=0))"
+day = 0
 
 # ╔═╡ 621d1231-c6f7-4615-a81b-4a5dcb9e3405
 md"""
@@ -78,9 +78,7 @@ md"""
 input = get_input(year, day)
 
 # ╔═╡ 77427f2a-c602-4dc4-a48e-2b9088fb90df
-md"""
-sample = $(@bind sample TextField((80, 5); default="Please paste the sample here."))
-"""
+sample = """"""
 
 # ╔═╡ 5ad03c42-119e-47ae-9b59-784d0ee97ef6
 md"## Preparations"
@@ -565,9 +563,9 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─cdce8f64-5996-11ec-00ef-77e69eb69432
 # ╟─5a50764e-c4b8-47fd-bf5d-a307388d85f7
 # ╟─96b2abc4-a7d5-4122-9c29-7136fd6ffae8
-# ╟─ec70de34-7f93-4090-9132-04173fae3a3c
+# ╠═ec70de34-7f93-4090-9132-04173fae3a3c
 # ╟─24b3ef81-0019-49c4-ad49-ac215826a9ac
-# ╟─77427f2a-c602-4dc4-a48e-2b9088fb90df
+# ╠═77427f2a-c602-4dc4-a48e-2b9088fb90df
 # ╟─5ad03c42-119e-47ae-9b59-784d0ee97ef6
 # ╟─7d146e62-da1f-4553-a8b2-96376eb485b2
 # ╟─f2cf8257-69e5-4bd7-83ce-e70d344048c4
