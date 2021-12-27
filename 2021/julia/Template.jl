@@ -26,6 +26,7 @@ begin
 	using Graphs, GraphPlot # To make and show a graph
 	using IterTools # To make iteration easier
 	using Mods # To use modular arithmetic
+	using Pipe # To enable more complex function piping
 	using PlutoUI
 
 	function get_input(year, day)
@@ -86,7 +87,7 @@ md"## Preparations"
 # ╔═╡ 7d146e62-da1f-4553-a8b2-96376eb485b2
 begin
 	function parse_input(input::AbstractString)
-		return split(input, "\n")
+		return @pipe input |> split(_, "\n")
 	end
 
 	md"🔨 Input parser loaded. (Expand to edit.)"
@@ -201,6 +202,7 @@ IterTools = "c8e1da08-722c-5040-9ed9-7db0dc04731e"
 JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 Mods = "7475f97c-0381-53b1-977b-4c60186c8d62"
+Pipe = "b98c9c47-44ae-5843-9183-064241ee97a0"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
@@ -213,6 +215,7 @@ HTTP = "~0.9.17"
 IterTools = "~1.4.0"
 JSON = "~0.21.2"
 Mods = "~1.3.2"
+Pipe = "~1.3.0"
 PlutoUI = "~0.7.23"
 """
 
@@ -450,6 +453,11 @@ deps = ["Dates"]
 git-tree-sha1 = "d7fa6237da8004be601e19bd6666083056649918"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
 version = "2.1.3"
+
+[[deps.Pipe]]
+git-tree-sha1 = "6842804e7867b115ca9de748a0cf6b364523c16d"
+uuid = "b98c9c47-44ae-5843-9183-064241ee97a0"
+version = "1.3.0"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
