@@ -1,6 +1,9 @@
 .elixir_ls
 .vscode
-
 .env
 .ipynb_checkpoints
 __pycache__
+
+nohup.out
+
+*.exe
